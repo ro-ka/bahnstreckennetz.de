@@ -26,6 +26,44 @@
     });
     map.dragRotate.disable();
     map.touchZoomRotate.disableRotation();
+
+
+    map.on('load', function () {
+      map.addSource("user", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": []
+        }
+      });
+
+      map.addLayer({
+        "id": "user",
+        "type": "circle",
+        "source": "user",
+        "paint": {
+          "circle-radius": 7,
+          "circle-color": "#007cbf"
+        }
+      });
+    });
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var userPosition = [position.coords.longitude, position.coords.latitude];
+
+        map.flyTo({center: userPosition, zoom: 10});
+        map.getSource("user").setData({
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": userPosition
+          }
+        });
+      }, function() {
+        console.log('No Geolocation');
+      });
+    }
   </script>
 
 </body>
