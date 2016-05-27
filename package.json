@@ -1,0 +1,44 @@
+{
+  "name": "bahnstreckennetz.de",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/roka/bahnstreckennetz.de.git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf build && mkdir build && mkdir build/images",
+    "prepare": "npm run clean && npm run html && npm run images && npm run stylus:server",
+    "build": "npm run clean && npm run html && npm run images && npm run stylus:build && npm run js:build",
+    "start": "npm run server",
+    "server": "npm run prepare && parallelshell 'npm run js:server' 'npm run httpserver'",
+    "httpserver": "light-server -b 0.0.0.0 -s build -p 8080 -w 'app/styles/**/*styl # npm run stylus:server # reloadcss' -w 'app/index.html # npm run html'",
+    "html": "cp app/index.html build",
+    "images": "cp app/images/* build/images/",
+    "stylus:server": "stylus --inline --sourcemap-inline -u autoprefixer-stylus app/styles/main.styl -o build",
+    "stylus:build": "stylus --inline --compress -u autoprefixer-stylus app/styles/main.styl -o build",
+    "js:server": "watchify app/scripts/main.js --debug -t babelify -o build/main.js",
+    "js:build": "browserify app/scripts/main.js -t babelify > build/main.js && npm run uglifyjs",
+    "uglifyjs": "uglifyjs build/main.js -o build/main.js -c warnings=false,drop_console=true --mangle",
+    "lint": "eslint ./app/scripts/**/*.js",
+    "test": "npm run lint",
+    "deploy": "sh deploy.sh"
+  },
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.2",
+    "babel-core": "^6.7.6",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "eslint": "^1.10.1",
+    "light-server": "^1.0.3",
+    "parallelshell": "^2.0.0",
+    "stylus": "^0.54.2",
+    "stylus-normalize": "^3.0.3",
+    "watchify": "^3.6.1"
+  }
+}
