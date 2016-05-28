@@ -1,3 +1,5 @@
+/* global mapboxgl */
+
 import mapConfig from '../config/map';
 
 /**
@@ -9,10 +11,10 @@ export default class {
    */
   constructor({onLoad = () => {}}) {
     this.canvas = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/roka/ciomo4s7f0011dkm0lzhvi74w',
-        center: [10.45, 51.21],
-        zoom: 6
+      container: 'map',
+      style: mapConfig.style,
+      center: mapConfig.center,
+      zoom: mapConfig.zoom
     });
 
     this.canvas.dragRotate.disable();

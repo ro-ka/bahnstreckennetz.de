@@ -10,14 +10,15 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "clean": "rm -rf build && mkdir build && mkdir build/images",
-    "prepare": "npm run clean && npm run html && npm run images && npm run stylus:server",
-    "build": "npm run clean && npm run html && npm run images && npm run stylus:build && npm run js:build",
+    "clean": "rm -rf build && mkdir build && mkdir build/images && mkdir build/fonts",
+    "prepare": "npm run clean && npm run html && npm run images && npm run fonts && npm run stylus:server",
+    "build": "npm run clean && npm run html && npm run images && npm run fonts && npm run stylus:build && npm run js:build",
     "start": "npm run server",
     "server": "npm run prepare && parallelshell 'npm run js:server' 'npm run httpserver'",
     "httpserver": "light-server -b 0.0.0.0 -s build -p 8080 -w 'app/styles/**/*styl # npm run stylus:server # reloadcss' -w 'app/index.html # npm run html'",
     "html": "cp app/index.html build",
     "images": "cp app/images/* build/images/",
+    "fonts": "cp app/fonts/* build/fonts/",
     "stylus:server": "stylus --inline --sourcemap-inline -u autoprefixer-stylus app/styles/main.styl -o build",
     "stylus:build": "stylus --inline --compress -u autoprefixer-stylus app/styles/main.styl -o build",
     "js:server": "watchify app/scripts/main.js --debug -t babelify -o build/main.js",

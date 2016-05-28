@@ -13,8 +13,9 @@ html, body
   margin: 0
   overflow: hidden
   font-size: 100%
+  font-family: Quark, Arial, Helvetica, sans-serif
   line-height: 1.4333
-  color: $dark
+  color: $black
   background: $white
 
 button
@@ -29,3 +30,18 @@ button
   transition: background .4s ease
   &:hover, &:focus
     background: $black-hover
+
+.site-header
+  position: absolute
+  top: 4em
+  left: 4vw
+  color: $white
+  background: $black
+  line-height: 1
+  padding: 0em .5em .5em 0em
+  h1
+    font-size: 9vw
+    margin: -0.3em 0 0 -0.3em
+    text-shadow: -1px -1px 0 $black, -1px 1px 0 $black, 1px 1px 0 $black, 1px -1px 0 $black
+    @media (min-width: 700px)
+      font-size: emCalc(63px)
