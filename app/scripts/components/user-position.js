@@ -24,8 +24,8 @@ export default class {
     this.mapCanvas.addSource('user', {
       type: 'geojson',
       data: {
-          type: 'FeatureCollection',
-          features: []
+        type: 'FeatureCollection',
+        features: []
       }
     });
 
@@ -35,7 +35,7 @@ export default class {
       source: 'user',
       paint: {
         'circle-radius': 7,
-        'circle-color': '#007cbf'
+        'circle-color': '#F45252'
       }
     });
   }
