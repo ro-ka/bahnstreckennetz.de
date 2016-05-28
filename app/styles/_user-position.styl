@@ -5,26 +5,20 @@
   right: 2em
   width: 2.5em
   height: 2.5em
-  background: $black
-  border: none
-  display: flex
-  justify-content: center
-  align-items: center
-  padding: 0
-  margin: 0
-  transition: background .4s ease
-  &:hover, &:focus
-    background: $black-hover
   &__icon
     width: 1.5em
     fill: $white
     margin: auto
-  &--searching &__icon
-    animation: pulseIcon 2.5s infinite
+  &--searching &__icon__center
+    animation: pulseIcon .4s infinite
     animation-direction: alternate
 
 @keyframes pulseIcon
-  from
-    fill: $white
-  to
-    fill: $grey
+  0%
+    opacity: 1
+  50%
+    opacity: 1
+  51%
+    opacity: 0
+  100%
+    opacity: 0
