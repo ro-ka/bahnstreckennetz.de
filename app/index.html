@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang='de'>
 <head>
-    <meta charset='utf-8' />
-    <title>Bahnstreckennetz</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+  <title>Bahnstreckennetz</title>
 
-    <link href='main.css' rel='stylesheet' />
+  <meta name="application-name" content="Bahnstreckennetz">
+  <meta name="description" content="Das Streckennetz der Deutschen Bahn.">
+  <meta name="url" content="http://bahnstreckennetz.de/">
+  <meta name="google" value="notranslate">
+  <meta name="format-detection" content="telephone=no">
+
+<!--<link rel="icon" href="path/to/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="path/to/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png">-->
+
+  <meta property="og:url" content="http://bahnstreckennetz.de">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bahnstreckennetz">
+<!--<meta property="og:image" content="https://example.com/image.jpg">-->
+  <meta property="og:description" content="Das Streckennetz der Deutschen Bahn.">
+  <meta property="og:site_name" content="Bahnstreckennetz">
+  <meta property="og:locale" content="de_DE">
+  <meta property="article:author" content="Robert Katzki">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@RobertKatzki">
+  <meta name="twitter:url" content="http://bahnstreckennetz.de">
+  <meta name="twitter:title" content="Bahnstreckennetz">
+  <meta name="twitter:description" content="Das Streckennetz der Deutschen Bahn.">
+<!--<meta name="twitter:image" content="https://example.com/image.jpg">-->
+
+  <meta itemprop="name" content="Bahnstreckennetz">
+  <meta itemprop="description" content="Das Streckennetz der Deutschen Bahn.">
+<!--<meta itemprop="image" content="https://example.com/image.jpg">-->
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#121314">
+  <meta name="apple-mobile-web-app-title" content="Bahnstreckennetz">
+<!--<link rel="apple-touch-icon" href="apple-touch-icon.png"> 180 * 180 -->
+  <!--<link rel="mask-icon" href="icon.svg" color="red">-->
+
+  <meta name="theme-color" content="#121314">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta http-equiv="cleartype" content="on">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="application-name" content="Bahnstreckennetz">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="msapplication-TileColor" content="#121314">
+  <!--<meta name="msapplication-TileImage" content="images/tileimage.jpg">-->
+
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+
+  <link href='main.css' rel='stylesheet' />
 </head>
 <body>
 
@@ -16,6 +65,7 @@
 
   <header class="site-header">
     <h1>Bahnstreckennetz</h1>
+    <p>Das Steckennetz der Deutschen Bahn.</p>
   </header>
 
   <button type='button' class='user-position'>
