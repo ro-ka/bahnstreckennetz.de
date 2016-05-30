@@ -13,8 +13,8 @@
   line-height: 1.4333
   color: $white
   background: $black
-  a
-    color: $white
+  border-radius: 0
+  box-shadow: none
 
 .mapboxgl-popup-anchor-bottom, .mapboxgl-popup-anchor-bottom-right, .mapboxgl-popup-anchor-bottom-left
   .mapboxgl-popup-tip
@@ -29,3 +29,7 @@
 
 .mapboxgl-popup-close-button
   padding: 0 .4em
+  color: $white
+  transition: color .2s ease
+  &:hover, &:focus
+    color: $grey
