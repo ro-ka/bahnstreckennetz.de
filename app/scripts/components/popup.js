@@ -12,7 +12,7 @@ export default class {
   constructor({mapCanvas, feature}) {
     const baseUrl = 'https://reiseauskunft.bahn.de/bin/query.exe/dn' +
         '?country=DEU&S=',
-      name = feature.properties.name;
+      name = feature.properties.geographicalName;
 
     this.mapCanvas = mapCanvas;
     this.popup = new mapboxgl.Popup();

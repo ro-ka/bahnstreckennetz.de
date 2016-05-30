@@ -6,3 +6,26 @@
   top: 0
   bottom: 0
   width:100%
+
+.mapboxgl-popup-content
+  font-size: 1rem
+  font-family: Quark, Arial, Helvetica, sans-serif
+  line-height: 1.4333
+  color: $white
+  background: $black
+  a
+    color: $white
+
+.mapboxgl-popup-anchor-bottom, .mapboxgl-popup-anchor-bottom-right, .mapboxgl-popup-anchor-bottom-left
+  .mapboxgl-popup-tip
+    border-top-color: $black
+.mapboxgl-popup-anchor-top, .mapboxgl-popup-anchor-top-right, .mapboxgl-popup-anchor-top-left
+  .mapboxgl-popup-tip
+    border-bottom-color: $black
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip
+  border-left-color: $black
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip
+  border-right-color: $black
+
+.mapboxgl-popup-close-button
+  padding: 0 .4em

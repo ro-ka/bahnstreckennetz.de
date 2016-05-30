@@ -40,7 +40,6 @@
     "parallelshell": "^2.0.0",
     "stylus": "^0.54.2",
     "stylus-normalize": "^3.0.3",
-    "turf": "^3.0.5",
     "watchify": "^3.6.1"
   }
 }
