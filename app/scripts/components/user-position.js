@@ -11,6 +11,7 @@ export default class {
     }
 
     this.$button = document.querySelector('.user-position');
+    this.$button.classList.add('user-position--show');
     this.$button.addEventListener('click', this.getPosition.bind(this));
   }
 
