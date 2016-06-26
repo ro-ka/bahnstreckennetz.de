@@ -1,4 +1,5 @@
 import Map from './components/map';
+import SiteHeader from './components/site-header';
 import UserPosition from './components/user-position';
 
 /**
@@ -12,6 +13,7 @@ class App {
     this.map = new Map({onLoad: mapCanvas => {
       this.userPosition.initialize(mapCanvas);
     }});
+    this.siteHeader = new SiteHeader();
     this.userPosition = new UserPosition();
   }
 }
