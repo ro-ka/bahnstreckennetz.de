@@ -11,4 +11,4 @@ export default {
 };
 
 mapboxgl.accessToken =
-  'pk.eyJ1Ijoicm9rYSIsImEiOiJvR29QUEp3In0.xeb909L0DGJcmmprwfIwKA';
+  'pk.eyJ1Ijoicm9rYSIsImEiOiJjazJsZnhsMXAwNjhiM2hsbmJ2NDRubmczIn0.UbkbXZc1GE26bsi6DJ8voQ';
